@@ -13,8 +13,8 @@
  * - prefers-reduced-motion users never see this component (wrapper hard-gates it).
  */
 
-import { useRef, useMemo, useCallback, useEffect } from "react";
-import { useFrame, useThree } from "@react-three/fiber";
+import { useRef, useMemo, useEffect } from "react";
+import { useFrame } from "@react-three/fiber";
 import {
   InstancedMesh,
   Object3D,
@@ -235,7 +235,7 @@ export default function NodeNetworkScene({ quality }: Scene3DProps) {
     [cfg.count, cfg.spread],
   );
   const mouse = useRef({ x: 0, y: 0 });
-  const { size } = useThree();
+
 
   useEffect(() => {
     const handlePointerMove = (e: PointerEvent) => {
