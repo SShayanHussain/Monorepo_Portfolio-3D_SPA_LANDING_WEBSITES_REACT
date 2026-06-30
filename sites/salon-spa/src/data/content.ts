@@ -67,7 +67,7 @@ export const siteContent = {
       { src: "https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=800&auto=format&fit=crop", alt: "Blonde balayage" },
       { src: "https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=800&auto=format&fit=crop", alt: "Spa treatment" },
       { src: "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?q=80&w=800&auto=format&fit=crop", alt: "Nail art" },
-      { src: "https://images.unsplash.com/photo-1595476108010-b4d1f10d5e43?q=80&w=800&auto=format&fit=crop", alt: "Facial massage" },
+      { src: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop", alt: "Facial massage" },
       { src: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?q=80&w=800&auto=format&fit=crop", alt: "Hair cutting" },
       { src: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=800&auto=format&fit=crop", alt: "Relaxing spa" },
       { src: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=800&auto=format&fit=crop", alt: "Beautiful hair" },
@@ -75,7 +75,7 @@ export const siteContent = {
       { src: "https://images.unsplash.com/photo-1599305090598-fe179d501227?q=80&w=800&auto=format&fit=crop", alt: "Hair coloring" },
       { src: "https://images.unsplash.com/photo-1519415943484-9fa1873496d4?q=80&w=800&auto=format&fit=crop", alt: "Massage stones" },
       { src: "https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?q=80&w=800&auto=format&fit=crop", alt: "Manicure" },
-      { src: "https://images.unsplash.com/photo-1520630626359-00f727c9b883?q=80&w=800&auto=format&fit=crop", alt: "Hair styling" },
+      { src: "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=800&auto=format&fit=crop", alt: "Hair styling" },
     ]
   },
   stylists: {

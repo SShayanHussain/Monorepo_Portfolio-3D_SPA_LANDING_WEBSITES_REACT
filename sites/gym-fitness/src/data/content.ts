@@ -69,7 +69,7 @@ export const siteContent = {
         role: "Head Strength Coach",
         bio: "Former collegiate powerlifter. Jax doesn't do excuses. He focuses on perfect mechanics and maximum effort.",
         image: {
-          src: "https://images.unsplash.com/photo-1567013127542-490d732e519a?q=80&w=800&auto=format&fit=crop",
+          src: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800&auto=format&fit=crop",
           alt: "Jaxson Vance",
         },
       },

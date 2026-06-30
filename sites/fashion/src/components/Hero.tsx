@@ -17,7 +17,7 @@ export default function Hero() {
         camera={{ position: [0, 0, 8], fov: 45 }}
         staticImage={{
           // Macro fabric texture for mobile fallback to ensure immediate load
-          src: "https://images.unsplash.com/photo-1607583648035-779872c050a4?q=80&w=1000&auto=format&fit=crop",
+          src: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1000&auto=format&fit=crop",
           alt: "Silk Texture",
         }}
         fallback2D={

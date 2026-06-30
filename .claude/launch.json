@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "restaurant-dist",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8803", "--directory", "sites/restaurant/dist"],
+      "port": 8803
+    },
+    {
+      "name": "real-estate-dist",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8804", "--directory", "sites/real-estate/dist"],
+      "port": 8804
+    }
+  ]
+}

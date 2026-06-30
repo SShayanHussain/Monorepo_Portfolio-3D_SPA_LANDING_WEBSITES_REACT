@@ -17,12 +17,6 @@
     "format": "prettier --write \"**/*.{ts,tsx,css,md,json}\"",
     "lighthouse": "node scripts/lighthouse.mjs"
   },
-  "pnpm": {
-    "overrides": {
-      "three": "0.169.0",
-      "@types/three": "0.169.0"
-    }
-  },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
     "@lhci/cli": "^0.14.0",

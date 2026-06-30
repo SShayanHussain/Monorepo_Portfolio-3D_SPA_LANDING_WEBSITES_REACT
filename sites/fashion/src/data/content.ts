@@ -29,7 +29,7 @@ export const siteContent = {
         name: "The Drape Trench",
         price: "$495",
         image1: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=800&auto=format&fit=crop",
-        image2: "https://images.unsplash.com/photo-1551048603-9df249961623?q=80&w=800&auto=format&fit=crop"
+        image2: "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?q=80&w=800&auto=format&fit=crop"
       },
       {
         name: "Silk Bias Slip",
@@ -41,7 +41,7 @@ export const siteContent = {
         name: "Oversized Cashmere Crew",
         price: "$340",
         image1: "https://images.unsplash.com/photo-1620799140188-3b2a02fd9a77?q=80&w=800&auto=format&fit=crop",
-        image2: "https://images.unsplash.com/photo-1574634534894-89d7576c8d59?q=80&w=800&auto=format&fit=crop"
+        image2: "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=800&auto=format&fit=crop"
       },
       {
         name: "Pleated Wide Leg",
@@ -54,7 +54,7 @@ export const siteContent = {
   lookbook: {
     images: [
       "https://images.unsplash.com/photo-1495385794356-15371f348c31?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1550614000-4b95d466f22d?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=1600&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1600&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1600&auto=format&fit=crop"
     ]
@@ -62,7 +62,7 @@ export const siteContent = {
   story: {
     headline: "Quiet architecture.",
     text: "We design for the spaces between. Clothing that supports rather than demands. Every Solene garment begins not with a sketch, but with the material—how it falls, how it moves, how it feels against the skin. We source deadstock Italian silks and organic cottons to create limited runs that transcend seasons.",
-    image: "https://images.unsplash.com/photo-1607583648035-779872c050a4?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=800&auto=format&fit=crop"
   },
   spotlight: {
     eyebrow: "Spotlight",

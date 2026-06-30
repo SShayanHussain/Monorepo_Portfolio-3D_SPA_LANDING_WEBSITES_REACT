@@ -1,3 +1,10 @@
 packages:
   - "packages/*"
   - "sites/*"
+
+# Force a single copy of Three.js + its types across the workspace so R3F/drei
+# type identities never clash between packages/ui and the sites. (pnpm 9 reads
+# overrides here, not from package.json.)
+overrides:
+  three: "0.169.0"
+  "@types/three": "0.169.0"

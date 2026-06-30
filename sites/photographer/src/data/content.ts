@@ -46,7 +46,7 @@ export const siteContent = {
       },
       {
         id: "img3",
-        src: "https://images.unsplash.com/photo-1512413914486-1eb8a6192135?q=80&w=800&auto=format&fit=crop",
+        src: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800&auto=format&fit=crop",
         alt: "Commercial lifestyle",
         category: "Commercial",
         aspect: "aspect-[4/5]"
@@ -60,7 +60,7 @@ export const siteContent = {
       },
       {
         id: "img5",
-        src: "https://images.unsplash.com/photo-1506880018603-83d5b62f4d34?q=80&w=800&auto=format&fit=crop",
+        src: "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=800&auto=format&fit=crop",
         alt: "Editorial 2",
         category: "Editorial",
         aspect: "aspect-video"
@@ -91,7 +91,7 @@ export const siteContent = {
   about: {
     headline: "Observer.",
     text: "My approach is rooted in quiet observation. Whether on a busy commercial set or an intimate editorial session, my goal is to strip away the artifice and capture a moment of genuine presence. I shoot primarily on medium format digital and 35mm film.",
-    image: "https://images.unsplash.com/photo-1554046920-90dcac4b7b62?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop"
   },
   process: {
     headline: "How it works.",

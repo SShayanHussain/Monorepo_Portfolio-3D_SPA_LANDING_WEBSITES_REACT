@@ -117,7 +117,7 @@ export const siteContent = {
         role: "Lead Hygienist",
         bio: "Sarah is known for her incredibly gentle touch and her passion for patient education. She ensures every cleaning is a breeze.",
         image: {
-          src: "https://images.unsplash.com/photo-1594824436998-040924fc400e?q=80&w=600&auto=format&fit=crop",
+          src: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=600&auto=format&fit=crop",
           alt: "Sarah Jenkins"
         }
       }

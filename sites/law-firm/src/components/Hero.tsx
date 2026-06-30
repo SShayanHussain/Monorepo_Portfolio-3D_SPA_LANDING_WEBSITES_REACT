@@ -16,7 +16,7 @@ export default function Hero() {
         className="absolute inset-0 h-full w-full opacity-40 mix-blend-screen"
         camera={{ position: [0, 2, 10], fov: 45 }}
         staticImage={{
-          src: "https://images.unsplash.com/photo-1577983695286-9cbccb3df5fb?q=80&w=2000&auto=format&fit=crop",
+          src: "https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=2000&auto=format&fit=crop",
           alt: "Abstract architectural pillars",
         }}
         fallback2D={

@@ -17,7 +17,7 @@ export default function Hero() {
         camera={{ position: [0, 0, 10], fov: 50 }}
         fallback2D={
           <div className="absolute inset-0 bg-surface-100 flex items-center justify-center">
-             <div className="w-full h-full opacity-20 bg-[url('https://images.unsplash.com/photo-1586528116311-ad8ed745090c?q=80&w=1200&auto=format&fit=crop')] bg-cover bg-center" />
+             <div className="w-full h-full opacity-20 bg-[url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1200&auto=format&fit=crop')] bg-cover bg-center" />
           </div>
         }
         overlay={

@@ -1,15 +1,19 @@
 import {
   Suspense,
+  lazy,
   useRef,
-  type ComponentProps,
   type ComponentType,
   type LazyExoticComponent,
   type ReactNode,
 } from "react";
-import { Canvas } from "@react-three/fiber";
 import { useInView, useReducedMotion } from "framer-motion";
 import { cn } from "../lib/cn";
 import { useIsBelowMd } from "../hooks/use-media-query";
+import type { CanvasRootProps } from "./internal/CanvasRoot";
+
+// The R3F runtime is reachable ONLY through this dynamic import, so Three.js
+// lives in a lazy chunk and never blocks first paint. See CanvasRoot.tsx.
+const CanvasRoot = lazy(() => import("./internal/CanvasRoot"));
 
 /**
  * What renders below the `md` (768px) breakpoint. This is set explicitly
@@ -67,7 +71,7 @@ export interface Canvas3DWrapperProps {
    * node-network), `'demand'` for near-static scenes (law-firm).
    */
   activeFrameloop?: "always" | "demand";
-  camera?: ComponentProps<typeof Canvas>["camera"];
+  camera?: CanvasRootProps["camera"];
   className?: string;
 }
 
@@ -130,24 +134,20 @@ export function Canvas3DWrapper({
   };
 
   const renderCanvas = (quality: SceneQuality): ReactNode => (
-    <Canvas
-      className="inset-0 h-full w-full"
-      style={{ position: "absolute" }}
-      // aria-hidden: the canvas is decorative; real content is in `overlay`.
-      aria-hidden="true"
+    // CanvasRoot is lazy: mounting it is what triggers the Three.js chunk
+    // download. The outer <Suspense> below shows the skeleton meanwhile — both
+    // the R3F chunk and the lazy scene suspend up to that single boundary.
+    <CanvasRoot
       // Loop pauses entirely when the hero is off-screen.
       frameloop={inView ? activeFrameloop : "never"}
       // Cap DPR so high-density mobile screens don't blow the fragment budget;
       // the reduced tier caps lower still.
       dpr={quality === "reduced" ? [1, 1.5] : [1, 2]}
-      gl={{ antialias: quality === "full", powerPreference: "high-performance" }}
+      antialias={quality === "full"}
       camera={camera}
     >
-      {/* No Suspense boundary here on purpose: the lazy-chunk AND in-scene
-          loader suspensions propagate up to the outer skeleton boundary below,
-          so the skeleton actually shows while the 3D chunk downloads. */}
       <Scene quality={quality} />
-    </Canvas>
+    </CanvasRoot>
   );
 
   // ── Gating order (the contract) ────────────────────────────────────────

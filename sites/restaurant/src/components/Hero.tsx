@@ -16,7 +16,7 @@ export default function Hero() {
         className="absolute inset-0 h-full"
         camera={{ position: [0, 2, 8], fov: 45 }}
         staticImage={{
-          src: "https://images.unsplash.com/photo-1544025162-8111f42d20ad?q=80&w=1200&auto=format&fit=crop",
+          src: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop",
           alt: "Plated food at Ember & Salt",
         }}
         overlay={

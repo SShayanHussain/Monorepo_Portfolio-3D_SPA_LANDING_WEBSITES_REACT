@@ -53,7 +53,7 @@ export const siteContent = {
         beds: 5,
         baths: 4,
         sqft: "4,100",
-        image: "https://images.unsplash.com/photo-1583608205712-bea724557714?q=80&w=800&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=800&auto=format&fit=crop"
       },
       {
         id: "l4",
@@ -62,7 +62,7 @@ export const siteContent = {
         beds: 4,
         baths: 5,
         sqft: "5,000",
-        image: "https://images.unsplash.com/photo-1600607687931-cebf581463eb?q=80&w=800&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=800&auto=format&fit=crop"
       }
     ]
   },
