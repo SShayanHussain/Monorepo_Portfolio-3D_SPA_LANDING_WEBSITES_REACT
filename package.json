@@ -1,0 +1,31 @@
+{
+  "name": "portfolio-monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Monorepo of 8 standalone 3D landing-page SPAs sharing a common UI library.",
+  "packageManager": "pnpm@9.7.0",
+  "engines": {
+    "node": ">=18.18.0",
+    "pnpm": ">=9"
+  },
+  "scripts": {
+    "dev": "pnpm --filter",
+    "build": "pnpm -r --filter \"./sites/*\" build",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "format": "prettier --write \"**/*.{ts,tsx,css,md,json}\"",
+    "lighthouse": "node scripts/lighthouse.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "@lhci/cli": "^0.14.0",
+    "eslint": "^9.9.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.9",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.6",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.0.1"
+  }
+}

@@ -1,0 +1,23 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# build output
+dist/
+build/
+*.tsbuildinfo
+
+# lighthouse
+.lighthouseci/
+
+# env / local
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+
+# editor
+.vscode/*
+!.vscode/extensions.json
+.idea/

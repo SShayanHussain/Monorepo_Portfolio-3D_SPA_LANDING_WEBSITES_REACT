@@ -1,0 +1,30 @@
+/**
+ * Base layer shared by every site. Each site imports this once, after its own
+ * Tailwind entry. Keep this minimal — tokens live in tailwind.preset.cjs, not
+ * here.
+ */
+
+/* Restyle (don't remove) the focus outline — design-system a11y rule. */
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 2px solid var(--brand-accent);
+  outline-offset: 2px;
+}
+
+/* The custom Cursor replaces the native one only where it actually renders;
+   hiding it globally would strand keyboard/touch users, so this is opt-in via
+   the `cursor-none` utility a site adds to <body> when it mounts <Cursor />. */
+.cursor-none,
+.cursor-none * {
+  cursor: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

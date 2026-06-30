@@ -1,0 +1,38 @@
+/* Imports must precede @tailwind directives. */
+@import "@portfolio/ui/styles.css";
+@import "@fontsource-variable/inter";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark-mode surface tints used by the sticky nav and various sections. */
+:root {
+  color-scheme: dark;
+}
+
+/* Smooth scroll but respect reduced-motion (handled by shared styles.css). */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Gradient text utility for the hero headline accent. */
+.text-gradient {
+  background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 50%, #c4b5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow effect behind the 3D hero canvas. */
+.hero-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  height: 60%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
