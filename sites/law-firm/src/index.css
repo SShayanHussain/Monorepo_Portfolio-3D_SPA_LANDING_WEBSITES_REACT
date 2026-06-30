@@ -1,0 +1,24 @@
+/* Imports must precede @tailwind directives. */
+@import "@portfolio/ui/styles.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background-color: theme('colors.surface.DEFAULT');
+  color: theme('colors.cream.DEFAULT');
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Elegant gold gradient for subtle highlights */
+.text-gradient-gold {
+  background: linear-gradient(135deg, theme('colors.brand.400') 0%, theme('colors.brand.600') 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
