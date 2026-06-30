@@ -1,0 +1,25 @@
+/* Imports must precede @tailwind directives. */
+@import "@portfolio/ui/styles.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Enforce dark mode by default for this site */
+  color-scheme: dark;
+}
+
+body {
+  /* Use the dark charcoal background and white text */
+  background-color: theme('colors.surface.DEFAULT');
+  color: theme('colors.cream.DEFAULT');
+}
+
+/* Optional high-energy text gradient */
+.text-gradient-neon {
+  background: linear-gradient(135deg, theme('colors.brand.300') 0%, theme('colors.brand.500') 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
