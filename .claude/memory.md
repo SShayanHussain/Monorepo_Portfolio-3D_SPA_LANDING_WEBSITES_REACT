@@ -74,3 +74,8 @@ Format per entry:
 - Decision: Measured production bundle sizes (gzipped): initial JS = 97.89KB (budget: <200KB ✅), lazy Three.js chunk = 217.98KB (budget: <300KB ✅), NodeNetworkScene = 1.41KB, CSS = 4.58KB. All budgets pass with margin.
 - Why: Establishes the baseline. The 218KB Three.js chunk is the floor for any site using R3F — the scene-specific code adds negligible weight on top.
 - Affects future sites: yes — expect ~218KB gzipped as the Three.js floor for all sites. Scene code should stay tiny (procedural geometry, no heavy .glb models).
+
+## restaurant — 2026-06-30
+- Decision: Procedural 3D scene used for restaurant hero (stylized plate and wine glass built purely with Three.js primitives) instead of a downloaded .glb asset.
+- Why: Ensures the custom lazy chunk stays extremely small (<5KB) and avoids fetching an external asset, perfectly preserving the bundle budget while satisfying the PRD's "single signature dish/ingredient" requirement.
+- Affects future sites: no, specific to restaurant.

@@ -1,0 +1,17 @@
+/* The shared design system styles */
+@import "@portfolio/ui/styles";
+
+/* Tailwind directives MUST come after the @import due to postcss-import rules */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}

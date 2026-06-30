@@ -17,6 +17,7 @@ export {
   type Scene3DProps,
 } from "./components/Canvas3DWrapper";
 export { Cursor, type CursorProps } from "./components/Cursor";
+export { StatCountUp, type StatCountUpProps } from "./components/StatCountUp";
 
 // Hooks & utilities sites reuse.
 export { cn } from "./lib/cn";
