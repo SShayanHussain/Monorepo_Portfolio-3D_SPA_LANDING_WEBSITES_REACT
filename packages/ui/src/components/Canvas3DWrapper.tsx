@@ -113,7 +113,7 @@ export function Canvas3DWrapper({
           className="absolute inset-0 h-full w-full object-cover"
           // Hero image is the LCP element — eager + high priority, no lazy.
           loading="eager"
-          fetchpriority="high"
+          {...{ fetchpriority: "high" } as any}
         />
       );
     }

@@ -1,0 +1,16 @@
+/* Imports must precede @tailwind directives. */
+@import "@portfolio/ui/styles.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: theme('colors.surface.DEFAULT');
+  color: theme('colors.textMain');
+  -webkit-font-smoothing: antialiased;
+}
