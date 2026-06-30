@@ -1,5 +1,5 @@
 /* The shared design system styles */
-@import "@portfolio/ui/styles";
+@import "@portfolio/ui/styles.css";
 
 /* Tailwind directives MUST come after the @import due to postcss-import rules */
 @tailwind base;

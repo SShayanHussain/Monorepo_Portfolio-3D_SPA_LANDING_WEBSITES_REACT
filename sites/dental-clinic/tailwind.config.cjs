@@ -1,17 +1,13 @@
 /** @type {import('tailwindcss').Config} */
-const sharedConfig = require("../../packages/ui/tailwind.config.cjs");
-
 module.exports = {
-  ...sharedConfig,
+  presets: [require("../../tailwind.preset.cjs")],
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
     "../../packages/ui/src/**/*.{js,ts,jsx,tsx}", // Scan the shared UI package for classes
   ],
   theme: {
-    ...sharedConfig.theme,
     extend: {
-      ...sharedConfig.theme.extend,
       colors: {
         // Dental Clinic Palette: Cool, clean, clinical-but-warm
         // primary: Soft Mint / Sage Green

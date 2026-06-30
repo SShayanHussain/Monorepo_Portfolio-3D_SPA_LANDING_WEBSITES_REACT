@@ -1,7 +1,5 @@
 /* Imports must precede @tailwind directives. */
 @import "@portfolio/ui/styles.css";
-@import "@fontsource-variable/inter";
-@import "@fontsource-variable/playfair-display";
 
 @tailwind base;
 @tailwind components;
