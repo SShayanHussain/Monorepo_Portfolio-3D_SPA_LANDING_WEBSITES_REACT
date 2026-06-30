@@ -1,7 +1,5 @@
-/* Imports must precede @tailwind directives (per memory.md). */
+/* Imports must precede @tailwind directives. */
 @import "@portfolio/ui/styles.css";
-@import "@fontsource-variable/inter";
-@import "@fontsource-variable/sora";
 
 @tailwind base;
 @tailwind components;
@@ -9,21 +7,18 @@
 
 :root {
   color-scheme: light;
-  /* Drive the shared @portfolio/ui components (Nav CTA, Button, focus rings,
-     Cursor) with the niche accent. */
-  --brand-accent: #1f6f5c;
-  --brand-accent-contrast: #faf9f6;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Inter Variable", system-ui, sans-serif;
+  background-color: theme('colors.surface.DEFAULT');
+  color: theme('colors.cream.DEFAULT');
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Hairline used to separate the calm, established sections. */
-.rule {
-  border-top: 1px solid theme("colors.canvas.200");
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Section, SectionHeading } from "@portfolio/ui";
 import { siteContent } from "@/data/content";
 
@@ -6,36 +5,38 @@ const { process } = siteContent;
 
 export default function Process() {
   return (
-    <Section id="process" className="bg-canvas-100">
-      <SectionHeading eyebrow={process.eyebrow} headline={process.headline} as="h2" />
-
-      <ol className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-        {process.steps.map((step, i) => (
-          <motion.li
-            key={step.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.5, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="relative flex flex-col"
-          >
-            {/* Connector line between steps (desktop only). */}
-            {i < process.steps.length - 1 && (
-              <span
-                aria-hidden="true"
-                className="absolute left-12 top-5 hidden h-px w-[calc(100%-2rem)] bg-canvas-200 lg:block"
-              />
-            )}
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-500 font-display text-body font-semibold text-white">
-              {i + 1}
-            </span>
-            <h3 className="mt-5 text-h3 font-display font-semibold text-ink">
-              {step.title}
-            </h3>
-            <p className="mt-2 text-body text-ink-muted">{step.body}</p>
-          </motion.li>
-        ))}
-      </ol>
+    <Section id="process" className="bg-surface py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-6 md:px-8">
+        <SectionHeading
+          eyebrow={process.eyebrow}
+          headline={process.headline}
+          align="center"
+          className="text-cream"
+        />
+        
+        {/* Horizontal Stepper */}
+        <div className="mt-20 overflow-x-auto hide-scrollbar pb-8">
+          <div className="flex flex-nowrap min-w-max md:min-w-0 md:grid md:grid-cols-4 gap-8">
+            {process.steps.map((step, index) => (
+              <div key={index} className="w-72 md:w-auto flex-shrink-0 relative">
+                {/* Connecting Line */}
+                {index < process.steps.length - 1 && (
+                  <div className="hidden md:block absolute top-6 left-12 right-[-2rem] h-px bg-surface-200 z-0" />
+                )}
+                
+                <div className="w-12 h-12 rounded-full bg-brand-50 text-brand-700 border border-brand-200 flex items-center justify-center font-bold text-lg mb-8 relative z-10 shadow-sm">
+                  {index + 1}
+                </div>
+                
+                <h3 className="text-xl font-display font-bold text-cream mb-4">{step.title.split('. ')[1]}</h3>
+                <p className="text-cream-20 font-body text-sm leading-relaxed pr-6 md:pr-0">
+                  {step.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </Section>
   );
 }

@@ -8,33 +8,35 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        // Body: Inter. Display: Sora — a clean geometric sans with weight, per
-        // the PRD's "trustworthy and established, not trendy-startup" direction.
-        sans: ["'Inter Variable'", "system-ui", "sans-serif"],
-        display: ["'Sora Variable'", "system-ui", "sans-serif"],
-      },
       colors: {
-        // PRD palette: cool neutrals (stone/slate from Tailwind defaults) with a
-        // single confident accent. Chose deep green over navy to differentiate
-        // from the law-firm site (navy/burgundy).
+        // Real Estate Palette: Cool neutrals (stone, slate) with deep green accent
         brand: {
-          50: "#eef5f2",
-          400: "#3f9079",
-          500: "#1f6f5c", // primary deep green accent → --brand-accent
-          600: "#175546",
-          700: "#10463a",
+          50: "#f0fdf4",
+          100: "#dcfce7",
+          200: "#bbf7d0",
+          300: "#86efac",
+          400: "#4ade80",
+          500: "#22c55e",
+          600: "#16a34a",
+          700: "#15803d",
+          800: "#166534",
+          900: "#14532d", // Confident deep green
         },
-        // Warm-neutral page surfaces (a touch warmer than pure slate).
-        canvas: {
-          DEFAULT: "#faf9f6", // page background (stone-ish cream)
-          100: "#f2f0ea",
-          200: "#e7e3da",
+        surface: {
+          DEFAULT: "#f8fafc", // Cool stone/slate white
+          50: "#f1f5f9",
+          100: "#e2e8f0",
+          200: "#cbd5e1",
         },
-        ink: {
-          DEFAULT: "#1c2522", // near-black with a green undertone
-          muted: "#5b665f",
-        },
+        cream: {
+          DEFAULT: "#0f172a", // Very dark slate/navy
+          10: "#1e293b",
+          20: "#334155",
+        }
+      },
+      fontFamily: {
+        display: ["'Plus Jakarta Sans Variable'", "sans-serif"],
+        body: ["'Plus Jakarta Sans Variable'", "sans-serif"],
       },
     },
   },

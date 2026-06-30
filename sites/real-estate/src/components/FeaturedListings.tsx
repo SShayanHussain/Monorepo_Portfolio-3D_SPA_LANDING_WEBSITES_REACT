@@ -1,94 +1,53 @@
-import { motion } from "framer-motion";
-import { Section, SectionHeading } from "@portfolio/ui";
+import { Section, SectionHeading, Button } from "@portfolio/ui";
 import { siteContent } from "@/data/content";
-import { sized, srcSet } from "@/lib/img";
 
-const { listings } = siteContent;
-
-function StatItem({ value, label }: { value: number; label: string }) {
-  return (
-    <div className="flex flex-col">
-      <span className="text-h3 font-display font-semibold leading-none text-ink">
-        {value.toLocaleString()}
-      </span>
-      <span className="text-small text-ink-muted">{label}</span>
-    </div>
-  );
-}
+const { featuredListings } = siteContent;
 
 export default function FeaturedListings() {
   return (
-    <Section id="listings" className="bg-canvas">
-      <SectionHeading
-        eyebrow={listings.eyebrow}
-        headline={listings.headline}
-        subhead={listings.subhead}
-        as="h2"
-      />
-
-      <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {listings.items.map((item, i) => (
-          <motion.article
-            key={item.address}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{
-              duration: 0.5,
-              delay: (i % 3) * 0.08,
-              ease: [0.16, 1, 0.3, 1],
-            }}
-            className="group flex flex-col overflow-hidden rounded-lg border border-canvas-200 bg-white shadow-sm transition-shadow duration-200 hover:shadow-xl"
-          >
-            <div className="relative aspect-[4/3] overflow-hidden">
-              <img
-                src={sized(item.imageBase, 768)}
-                srcSet={srcSet(item.imageBase)}
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                alt={item.alt}
-                loading="lazy"
-                className="h-full w-full object-cover transition-transform duration-500 ease-out-expo group-hover:scale-105"
-              />
-              <span className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-small font-medium text-brand-700 backdrop-blur-sm">
-                {item.status}
-              </span>
-            </div>
-
-            <div className="flex flex-1 flex-col p-5">
-              {/* Price + key stats are visible immediately — no hover required
-                  (conversion priority #2: scannable in under 5 seconds). */}
-              <div className="flex items-baseline justify-between">
-                <p className="text-h3 font-display font-semibold text-ink">
-                  {item.price}
-                </p>
-              </div>
-              <p className="mt-1 text-body text-ink-muted">{item.address}</p>
-
-              <div className="mt-4 flex gap-6 border-t border-canvas-200 pt-4">
-                <StatItem value={item.beds} label="Beds" />
-                <StatItem value={item.baths} label="Baths" />
-                <StatItem value={item.sqft} label="Sq ft" />
-              </div>
-
-              {/* Non-essential detail revealed on hover/focus-within. */}
-              <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out-expo group-hover:grid-rows-[1fr] group-focus-within:grid-rows-[1fr]">
-                <div className="overflow-hidden">
-                  <p className="pt-4 text-small text-ink-muted">{item.blurb}</p>
+    <Section id="listings" className="bg-surface-50 py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-6 md:px-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <SectionHeading
+            eyebrow={featuredListings.eyebrow}
+            headline={featuredListings.headline}
+            align="left"
+            className="text-cream m-0"
+          />
+          <Button variant="secondary" className="border-brand-500 text-brand-700 hover:bg-brand-50 w-full md:w-auto">
+            View All Properties
+          </Button>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {featuredListings.listings.map((listing) => (
+            <div key={listing.id} className="bg-surface shadow-sm hover:shadow-md transition-shadow group border border-surface-200 overflow-hidden flex flex-col">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <img 
+                  src={listing.image} 
+                  alt={listing.address} 
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute top-4 right-4 bg-surface text-cream font-bold px-3 py-1 text-sm shadow-sm">
+                  Active
                 </div>
               </div>
-
-              <a
-                href="#contact"
-                className="mt-4 inline-flex items-center gap-1 text-small font-medium text-brand-600 transition-colors hover:text-brand-700"
-              >
-                View details
-                <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
-                  →
-                </span>
-              </a>
+              
+              <div className="p-6 flex flex-col flex-grow">
+                <p className="text-2xl font-display font-bold text-brand-800 mb-2">{listing.price}</p>
+                <div className="flex items-center gap-3 text-sm font-body text-cream-20 mb-4 divide-x divide-surface-200">
+                  <span className="font-semibold">{listing.beds} <span className="font-normal opacity-70">Beds</span></span>
+                  <span className="pl-3 font-semibold">{listing.baths} <span className="font-normal opacity-70">Baths</span></span>
+                  <span className="pl-3 font-semibold">{listing.sqft} <span className="font-normal opacity-70">Sq.Ft.</span></span>
+                </div>
+                <p className="text-sm font-body text-cream-20 mt-auto leading-relaxed border-t border-surface-100 pt-4 truncate">
+                  {listing.address}
+                </p>
+              </div>
             </div>
-          </motion.article>
-        ))}
+          ))}
+        </div>
       </div>
     </Section>
   );
