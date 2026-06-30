@@ -525,6 +525,12 @@ importers:
       '@eslint/js':
         specifier: ^9.9.0
         version: 9.39.4
+      '@fontsource-variable/inter':
+        specifier: ^5.2.8
+        version: 5.2.8
+      '@fontsource-variable/playfair-display':
+        specifier: ^5.1.0
+        version: 5.2.8
       '@types/react':
         specifier: ^18.3.3
         version: 18.3.31

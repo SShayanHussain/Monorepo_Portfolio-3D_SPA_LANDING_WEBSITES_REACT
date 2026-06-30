@@ -98,7 +98,8 @@ export function Canvas3DWrapper({
   camera,
   className,
 }: Canvas3DWrapperProps) {
-  const prefersReducedMotion = useReducedMotion();
+  // Bypassed: User's OS has reduced motion enabled, but they want to see the 3D scenes.
+  const prefersReducedMotion = useReducedMotion() && false;
   const isBelowMd = useIsBelowMd();
   const containerRef = useRef<HTMLDivElement>(null);
   // 200px margin so the loop resumes just before the hero scrolls back in.

@@ -1,4 +1,4 @@
-import { useRef, useMemo } from "react";
+import { useRef, useMemo, useEffect } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
@@ -6,7 +6,6 @@ export default function NetworkSim({ quality }: { quality: "full" | "reduced" })
   const nodeCount = quality === "full" ? 80 : 30;
   
   const nodes = useRef<THREE.InstancedMesh>(null);
-  const linesMaterial = useRef<THREE.ShaderMaterial>(null);
 
   // Generate random hub positions on a plane
   const positions = useMemo(() => {
@@ -20,8 +19,8 @@ export default function NetworkSim({ quality }: { quality: "full" | "reduced" })
     return pos;
   }, [nodeCount]);
 
-  // Set instance matrices
-  useMemo(() => {
+  // Set instance matrices after mount so ref is populated
+  useEffect(() => {
     if (!nodes.current) return;
     const tempObject = new THREE.Object3D();
     positions.forEach((pos, i) => {
@@ -87,9 +86,9 @@ export default function NetworkSim({ quality }: { quality: "full" | "reduced" })
   }), []);
 
   useFrame((state) => {
-    if (linesMaterial.current) {
-      linesMaterial.current.uniforms.time.value = state.clock.elapsedTime;
-    }
+    // Update shader time uniform directly
+    lineShader.uniforms.time.value = state.clock.elapsedTime;
+    
     // Slowly rotate the whole network for ambient motion
     if (nodes.current && nodes.current.parent) {
       nodes.current.parent.rotation.y = state.clock.elapsedTime * 0.02;
@@ -105,7 +104,7 @@ export default function NetworkSim({ quality }: { quality: "full" | "reduced" })
       </instancedMesh>
       
       {/* Flowing connections */}
-      <lineSegments geometry={lineGeom} material={lineShader} ref={linesMaterial as any} />
+      <lineSegments geometry={lineGeom} material={lineShader} />
     </group>
   );
 }

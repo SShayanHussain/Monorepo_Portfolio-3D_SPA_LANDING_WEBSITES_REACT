@@ -44,8 +44,8 @@ export default function QuoteForm() {
                 </div>
                 <div>
                   <label className="block font-body text-xs uppercase tracking-widest text-textMuted mb-2">Primary Service of Interest</label>
-                  <select className="w-full bg-surface border border-surface-200 p-4 text-textMain focus:outline-none focus:border-brand transition-colors appearance-none" required>
-                    <option value="" disabled selected>Select an option...</option>
+                  <select defaultValue="" className="w-full bg-surface border border-surface-200 p-4 text-textMain focus:outline-none focus:border-brand transition-colors appearance-none" required>
+                    <option value="" disabled>Select an option...</option>
                     <option value="ltl">LTL / FTL Freight</option>
                     <option value="lastmile">Last-Mile Delivery</option>
                     <option value="warehousing">Warehousing & Fulfillment</option>
