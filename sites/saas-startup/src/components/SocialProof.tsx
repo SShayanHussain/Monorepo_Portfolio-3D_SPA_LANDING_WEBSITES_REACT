@@ -31,35 +31,16 @@ export default function SocialProof() {
             }}
             className="flex items-center gap-2"
           >
-            {/* Placeholder logo — geometric shape + company name. */}
-            <svg
-              width={logo.width}
-              height="28"
-              viewBox={`0 0 ${logo.width} 28`}
-              fill="none"
-              aria-label={logo.name}
-            >
-              <rect
-                x="0"
-                y="4"
-                width="20"
-                height="20"
-                rx="4"
-                fill="currentColor"
-                className="text-neutral-300"
+            <div className="flex items-center gap-2">
+              <img
+                src={`https://cdn.simpleicons.org/${logo.name.toLowerCase()}/white`}
+                alt={`${logo.name} logo`}
+                className="h-5 w-5"
               />
-              <text
-                x="26"
-                y="19"
-                fill="currentColor"
-                className="text-neutral-300"
-                fontSize="13"
-                fontFamily="Inter Variable, sans-serif"
-                fontWeight="600"
-              >
+              <span className="text-[15px] font-semibold text-white tracking-tight">
                 {logo.name}
-              </text>
-            </svg>
+              </span>
+            </div>
           </motion.div>
         ))}
       </div>
